@@ -16,9 +16,10 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { MenuIcon, XIcon } from "lucide-react";
+import { MainButton } from "./button";
 export const Header = () => {
   return (
-    <header className="container !p-4 mx-auto flex items-center justify-between">
+    <header className="container mx-auto  !p-4 flex items-center justify-between bg-white/20">
       <Link href="/" className="flex items-center">
         <div className="w-20 h-20 relative">
           <Image
@@ -84,35 +85,32 @@ export const Header = () => {
       </Sheet>
 
       <NavigationMenu className="hidden lg:flex">
-        <NavigationMenuList>
+        <NavigationMenuList className="gap-10">
           <NavigationMenuLink asChild>
-            <Link href="#" className="!text-white" prefetch={false}>
+            <Link href="#" className="!text-white uppercase" prefetch={false}>
               Головна
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <Link href="#" className="!text-white" prefetch={false}>
+            <Link href="#" className="!text-white uppercase" prefetch={false}>
               Про нас
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <Link href="#" className="!text-white" prefetch={false}>
+            <Link href="#" className="!text-white uppercase" prefetch={false}>
               Services
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <Link href="#" className="!text-white" prefetch={false}>
+            <Link href="#" className="!text-white uppercase" prefetch={false}>
               Сфери діяльності
             </Link>
           </NavigationMenuLink>
         </NavigationMenuList>
       </NavigationMenu>
 
-      <Link
-        href="/contact"
-        className="bg-[#F29721] hidden lg:flex text-white font-medium text-base uppercase py-4 px-4 rounded-lg w-[193px] text-center"
-      >
-        Зв'язатись з нами
+      <Link className="hidden lg:block" href="/contact">
+        <MainButton text="Зв'язатись з нами" />
       </Link>
     </header>
   );
