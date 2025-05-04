@@ -104,4 +104,6 @@ body {
 
 @theme {
   --color-main: oklch(75.3% 0.16 65.7deg);
+  --color-carbon-fiber: oklch(29.7% 0.000000000000000279 0deg);
+  --color-gray-400: oklch(61.9% 0.00894 99deg);
 }

@@ -20,7 +20,7 @@ import { MainButton } from "./button";
 export const Header = () => {
   return (
     <header className="bg-white/20 fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto p-4 flex items-center justify-between">
+      <div className="container mx-auto py-4 px-2.5 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <div className="w-20 h-20 relative">
             <Image
