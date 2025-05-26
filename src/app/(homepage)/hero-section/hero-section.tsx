@@ -1,7 +1,9 @@
+import {HeroSlider} from "@/app/(homepage)/hero-section/components/hero-slider";
+
 export const HeroSection = () => {
   return (
     <section className="min-h-dvh">
-      <div className="container mx-auto"></div>
+      <HeroSlider/>
     </section>
   );
 };
