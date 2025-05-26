@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {MainButton} from "@/components/shared/button";
+import {HeroAdvantagesCards} from "@/app/(homepage)/hero-section/components/hero-advantages-cards";
 
 const slides = [
     {
@@ -42,6 +43,7 @@ export const HeroSlider = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <HeroAdvantagesCards/>
         </div>
     );
 }
