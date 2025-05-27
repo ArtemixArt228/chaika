@@ -5,7 +5,7 @@ import { MainButton } from "@/components/shared/button";
 
 export const DescriptionSection = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto mb-20">
       <h4 className="text-center text-white uppercase text-4xl mb-8">
         Від родючих полів до смачних страв – ми створюємо якість природним
         шляхом
