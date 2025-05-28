@@ -1,3 +1,5 @@
+import { ContactRequest } from "@/components/shared/contact-request";
+
 import { HeroSection } from "@/app/(homepage)/hero-section/hero-section";
 import { DescriptionSection } from "@/app/(homepage)/description-section/description-section";
 import { ActivitySection } from "@/app/(homepage)/activity-section/activity-section";
@@ -16,6 +18,8 @@ export default function Home() {
       <BannerSection />
 
       <OurProductsSection />
+
+      <ContactRequest />
     </main>
   );
 }
