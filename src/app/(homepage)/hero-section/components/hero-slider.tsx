@@ -13,7 +13,7 @@ import { HeroAdvantagesCards } from "@/app/(homepage)/hero-section/components/he
 const slides = [
   {
     id: 1,
-    image: "/homepage/hero-section/slide-1.png",
+    image: "/homepage/hero-section/slides/slide-1.png",
     title: "Фермерське господарство «ЧАЙКА»",
     subtitle:
       "Комплексний підхід до агробізнесу, тваринництва, садівництва та м’ясопереробки. «Чайка» – це торгова марка, якій довіряють споживачі, адже знають, що наша продукція створена з натуральних інгредієнтів.",
