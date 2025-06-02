@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MenuIcon, XIcon } from "lucide-react";
 
 import {
   NavigationMenu,
@@ -15,7 +16,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { MenuIcon, XIcon } from "lucide-react";
+
 import { MainButton } from "./button";
 export const Header = () => {
   return (
@@ -54,14 +55,14 @@ export const Header = () => {
 
             <div className="grid gap-2.5 text-white justify-end">
               <Link
-                href="#"
+                href="/"
                 className="flex w-full items-center py-2 justify-end "
                 prefetch={false}
               >
                 Головна
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="flex w-full items-center py-2 justify-end"
                 prefetch={false}
               >
