@@ -8,7 +8,7 @@ export const Banner = () => {
         Сучасність і традиції у закритому циклі виробництва
       </h4>
       <div className="absolute w-full h-full -bottom-25 flex">
-        {Array.from({ length: 10 }, (_, i) => (
+        {Array.from({ length: 16 }, (_, i) => (
           <div key={i} className="w-30 h-20 relative">
             <Image
               fill
