@@ -2,6 +2,7 @@ import React from "react";
 
 import { HeroSection } from "@/app/products/hero-section/hero-section";
 import { ProductionStagesSection } from "@/app/products/production-stages-section/production-stages-section";
+import { OurStoresSection } from "@/app/products/our-stores-section/our-stores-section";
 
 const ProductsPage = () => {
   return (
@@ -9,6 +10,8 @@ const ProductsPage = () => {
       <HeroSection />
 
       <ProductionStagesSection />
+
+      <OurStoresSection />
     </main>
   );
 };
