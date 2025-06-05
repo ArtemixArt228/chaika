@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { MenuIcon, XIcon } from "lucide-react";
+import { useState } from "react";
 
 import {
   NavigationMenu,
@@ -17,13 +21,21 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
+import { cn } from "@/lib/utils";
+import { ROUTES } from "@/constants/routes";
+
 import { MainButton } from "./button";
+
 export const Header = () => {
+  const pathname = usePathname();
+
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
     <header className="bg-white/20 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto py-4 px-2.5 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <div className="w-20 h-20 relative">
+        <Link href="/" className="flex items-center z-100">
+          <div className="w-16 h-15 relative">
             <Image
               src="/chaika-logo.svg"
               alt="Chaika Logo"
@@ -34,9 +46,15 @@ export const Header = () => {
           </div>
         </Link>
 
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={(open) => setIsSheetOpen(open)}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn("lg:hidden", {
+                hidden: isSheetOpen,
+              })}
+            >
               <MenuIcon className="text-white size-8" />
             </Button>
           </SheetTrigger>
@@ -49,35 +67,48 @@ export const Header = () => {
               Меню для телефонів
             </SheetDescription>
 
-            <SheetClose className="absolute top-9 right-6">
+            <SheetClose className="absolute top-7 right-2">
               <XIcon className="h-10 w-10 text-white" />
             </SheetClose>
 
-            <div className="grid gap-2.5 text-white justify-end">
+            <div className="grid gap-4 text-white justify-end">
               <Link
                 href="/"
-                className="flex w-full items-center py-2 justify-end "
+                className={cn(
+                  "flex w-full items-center justify-end text-2xl",
+                  pathname === ROUTES.HOME && "text-main font-semibold",
+                )}
                 prefetch={false}
               >
                 Головна
               </Link>
               <Link
                 href="/about"
-                className="flex w-full items-center py-2 justify-end"
+                className={cn(
+                  "flex w-full items-center justify-end text-2xl",
+                  pathname === ROUTES.ABOUT && "text-main font-semibold",
+                )}
                 prefetch={false}
               >
                 Про нас
               </Link>
               <Link
-                href="#"
-                className="flex w-full items-center py-2 justify-end"
+                href="/activity-areas"
+                className={cn(
+                  "flex w-full items-center justify-end text-2xl",
+                  pathname === ROUTES.ACTIVITY_AREAS &&
+                    "text-main font-semibold",
+                )}
                 prefetch={false}
               >
                 Сфери діяльності
               </Link>
               <Link
-                href="#"
-                className="flex w-full items-center py-2 justify-end"
+                href="/products"
+                className={cn(
+                  "flex w-full items-center justify-end text-2xl",
+                  pathname === ROUTES.PRODUCTS && "text-main font-semibold",
+                )}
                 prefetch={false}
               >
                 Мʼясна продукція
@@ -87,32 +118,60 @@ export const Header = () => {
         </Sheet>
 
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="gap-10">
+          <NavigationMenuList className="gap-8">
             <NavigationMenuLink asChild>
-              <Link href="#" className="!text-white uppercase" prefetch={false}>
+              <Link
+                href="/"
+                className={cn(
+                  "text-white uppercase",
+                  pathname === ROUTES.HOME && "text-main font-bold",
+                )}
+                prefetch={false}
+              >
                 Головна
               </Link>
             </NavigationMenuLink>
             <NavigationMenuLink asChild>
-              <Link href="#" className="!text-white uppercase" prefetch={false}>
+              <Link
+                href="/about"
+                className={cn(
+                  "text-white uppercase",
+                  pathname === ROUTES.ABOUT && "text-main font-bold",
+                )}
+                prefetch={false}
+              >
                 Про нас
               </Link>
             </NavigationMenuLink>
             <NavigationMenuLink asChild>
-              <Link href="#" className="!text-white uppercase" prefetch={false}>
+              <Link
+                href="/activity-areas"
+                className={cn(
+                  "text-white uppercase",
+                  pathname === ROUTES.ACTIVITY_AREAS && "text-main font-bold",
+                )}
+                prefetch={false}
+              >
                 Сфери діяльності
               </Link>
             </NavigationMenuLink>
             <NavigationMenuLink asChild>
-              <Link href="#" className="!text-white uppercase" prefetch={false}>
+              <Link
+                href="/products"
+                className={cn(
+                  "text-white uppercase",
+                  pathname === ROUTES.PRODUCTS && "text-main font-bold",
+                )}
+                prefetch={false}
+              >
                 Мʼясна продукція
               </Link>
             </NavigationMenuLink>
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Link className="hidden lg:block" href="/contact">
-          <MainButton text="Зв'язатись з нами" />
+        <Link href="#contact_us">
+          <MainButton text="Зв'язатись з нами" className="hidden lg:flex" />
         </Link>
       </div>
     </header>

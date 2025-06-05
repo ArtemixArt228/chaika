@@ -6,7 +6,7 @@ import { MainButton } from "@/components/shared/button";
 
 export const ContactRequest = () => {
   return (
-    <section className="container mx-auto mb-20">
+    <section id="contact_us" className="container mx-auto mb-20">
       <h4 className="text-center text-white uppercase text-4xl mb-8">
         Залиште вашу пошту і ми зв’яжемось з вами
       </h4>

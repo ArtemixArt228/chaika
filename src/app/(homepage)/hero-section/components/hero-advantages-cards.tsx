@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 export const HeroAdvantagesCards = () => {
   return (
-    <div className="absolute -bottom-17 w-full">
+    <div className="absolute z-10 -bottom-17 w-full">
       <div className="container mx-auto">
         <div className="flex h-36 px-12 py-10 bg-night-rider rounded-xl justify-between">
           <div className="flex items-center gap-6">
