@@ -21,6 +21,8 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
+import { useScrolledPastThreshold } from "@/hooks/useScrolledPastThreshold";
+
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";
 
@@ -31,8 +33,15 @@ export const Header = () => {
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
+  const scrolled = useScrolledPastThreshold();
+
   return (
-    <header className="bg-white/20 fixed top-0 left-0 right-0 z-50">
+    <header
+      className={cn("fixed top-0 left-0 right-0 z-50", {
+        "bg-carbon-fiber/80 backdrop-blur-lg": scrolled,
+        "bg-white/20": !scrolled,
+      })}
+    >
       <div className="container mx-auto py-4 px-2.5 flex items-center justify-between">
         <Link href="/" className="flex items-center z-100">
           <div className="w-16 h-15 relative">
