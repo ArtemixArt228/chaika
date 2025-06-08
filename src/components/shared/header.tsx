@@ -179,7 +179,7 @@ export const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Link href="#contact_us">
+        <Link href="#contact_us" className="hidden lg:flex">
           <MainButton text="Зв'язатись з нами" className="hidden lg:flex" />
         </Link>
       </div>
