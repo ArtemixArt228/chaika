@@ -6,8 +6,6 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 import { MainButton } from "@/components/shared/button";
 
-import { HeroAdvantagesCards } from "@/app/(homepage)/hero-section/components/hero-advantages-cards";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -61,7 +59,6 @@ export const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <HeroAdvantagesCards />
     </div>
   );
 };
