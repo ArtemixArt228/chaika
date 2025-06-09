@@ -37,11 +37,11 @@ const ACTIVITY_CARDS = [
 
 export const ActivitySection = () => {
   return (
-    <section className="container mx-auto mb-20">
+    <section className="container mx-auto mb-24 lg:mb-52 p-3 lg:p-0">
       <h4 className="text-center text-white uppercase text-4xl mb-8">
         Сфери діяльності
       </h4>
-      <p className="text-stone-400 text-xl text-center">
+      <p className="text-stone-400 text-xl text-center max-w-3xl mx-auto mb-16">
         Від вирощування до готової продукції. Ми працюємо на перетині традицій
         та інновацій, об&#39;єднуючи найкращі природні ресурси з сучасними
         технологіями

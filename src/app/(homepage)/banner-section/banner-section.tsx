@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const BannerSection = () => {
   return (
-    <section className="container mx-auto mb-30">
+    <section className="container mx-auto mb-24 lg:mb-52">
       <div className="relative rounded-xl h-92">
         <Image
           src="/homepage/banner-section/banner.png"
