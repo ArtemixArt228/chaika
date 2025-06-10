@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -22,22 +22,41 @@ const PRODUCTS = [
 export const ProductsSlider = () => {
   return (
     <div className="relative">
-      <div className="absolute top-0 right-0 z-10 flex gap-2 p-2">
-        <Button variant="ghost" className="swiper-button-prev p-2">
-          <ArrowLeft />
+      <div className="absolute -top-14 right-0 z-10 flex gap-2 p-2">
+        <Button
+          variant="ghost"
+          className="custom-swiper-button-prev bg-transparent p-2"
+        >
+          <ChevronLeft className="!size-8 text-white" />
         </Button>
-        <Button variant="ghost" className="swiper-button-next p-2">
-          <ArrowRight />
+        <Button
+          variant="ghost"
+          className="custom-swiper-button-next bg-transparent p-2"
+        >
+          <ChevronRight className="!size-8 text-white" />
         </Button>
       </div>
 
       <Swiper
         modules={[Navigation]}
-        slidesPerView={4}
         spaceBetween={16}
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".custom-swiper-button-next",
+          prevEl: ".custom-swiper-button-prev",
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
         }}
         className="pt-12"
       >
