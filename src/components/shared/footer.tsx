@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import { Phone, Mail, Youtube, Facebook, Instagram } from "lucide-react";
 
 export const Footer = () => {
@@ -19,7 +18,7 @@ export const Footer = () => {
               />
             </div>
           </Link>
-          <p className="text-gray-400">
+          <p className="text-stone-400">
             Наш принцип – робити якісно. Інтереси споживача завжди на першому
             місці.
           </p>
@@ -47,22 +46,22 @@ export const Footer = () => {
           <div className="flex flex-col gap-2">
             <div>
               <p className="text-white">м. Луцьк</p>
-              <p className="text-gray-400 font-light">вул. Ковельська 15</p>
-              <p className="text-gray-400 font-light">прос-т Перемоги 11</p>
+              <p className="text-stone-400 font-light">вул. Ковельська 15</p>
+              <p className="text-stone-400 font-light">прос-т Перемоги 11</p>
             </div>
 
             <div>
               <p className="text-white">м. Тернопіль</p>
-              <p className="text-gray-400 font-light">
+              <p className="text-stone-400 font-light">
                 вул. Степана Бандери 22
               </p>
-              <p className="text-gray-400 font-light">вул. Шептицького 232</p>
-              <p className="text-gray-400 font-light">вул. Миру 4в</p>
+              <p className="text-stone-400 font-light">вул. Шептицького 232</p>
+              <p className="text-stone-400 font-light">вул. Миру 4в</p>
             </div>
 
             <div>
               <p className="text-white">м. Рівне</p>
-              <p className="text-gray-400 font-light">вул. Київська 18</p>
+              <p className="text-stone-400 font-light">вул. Київська 18</p>
             </div>
           </div>
         </div>
