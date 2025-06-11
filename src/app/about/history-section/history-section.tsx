@@ -30,9 +30,9 @@ const HISTORY_ITEMS = [
 
 export const HistorySection = () => {
   return (
-    <section className="container mx-auto mb-20 relative">
+    <section className="container mx-auto mb-10 relative">
       <h4 className="text-center text-white uppercase text-2xl md:text-4xl mb-16">
-        Історія створення та розвиток компанії
+        Історія створення та <br /> розвиток компанії
       </h4>
 
       <div className="flex justify-between items-start gap-4">
