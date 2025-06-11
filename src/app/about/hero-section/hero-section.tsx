@@ -5,7 +5,7 @@ import { CounterCards } from "@/app/about/hero-section/components/counter-cards"
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-dvh mt-0 lg:mt-24 mb-32">
+    <section className="min-h-dvh mt-0 lg:mt-30 mb-32">
       <div className="relative w-full h-screen lg:h-110 lg:w-3xl rounded-none lg:rounded-r-xl">
         <Image
           src="/about/hero-section/field.png"

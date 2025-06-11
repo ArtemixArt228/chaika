@@ -8,6 +8,7 @@ export const AnimatedCounter = ({
   to = 100,
   duration = 2,
   text = "",
+  symbol = "",
 }) => {
   const count = useMotionValue(from);
   const [display, setDisplay] = useState(from);
@@ -24,9 +25,12 @@ export const AnimatedCounter = ({
   }, [to, duration, count]);
 
   return (
-    <motion.span className="text-xl text-white">
-      {Math.round(display)}
-      {text}
-    </motion.span>
+    <div className="flex flex-col items-center justify-center gap-2">
+      <motion.p className="text-6xl text-white text-center">
+        {Math.round(display)}
+        {symbol}
+      </motion.p>
+      <span className="text-base text-white text-center">{text}</span>
+    </div>
   );
 };
