@@ -43,16 +43,18 @@ const OUR_VALUES_CARDS = [
 
 export const OurValuesSection = () => {
   return (
-    <section className="container mx-auto mb-20">
-      <h4 className="text-center text-white uppercase text-4xl mb-8">
-        Наші цінності
-      </h4>
+    <div className="bg-stone-900 pt-70 md:pt-60 lg:pt-40 pb-12 mb-32">
+      <section className="container mx-auto">
+        <h4 className="text-center text-white uppercase text-2xl md:text-4xl mb-8">
+          Наші цінності
+        </h4>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">
-        {OUR_VALUES_CARDS.map((card, i) => (
-          <OurValuesCard key={i} {...card} />
-        ))}
-      </div>
-    </section>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-5 p-3 md:px-0">
+          {OUR_VALUES_CARDS.map((card, i) => (
+            <OurValuesCard key={i} {...card} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
