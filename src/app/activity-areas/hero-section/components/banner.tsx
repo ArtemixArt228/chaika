@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export const Banner = () => {
   return (
-    <div className="bg-night-rider h-36 w-full grid place-items-center relative mt-80">
-      <h4 className="text-3xl relative z-10 uppercase text-white">
+    <div className="bg-night-rider h-36 w-full grid place-items-center relative mt-20 lg:mt-80">
+      <h4 className="text-2xl md:text-4xl relative z-10 uppercase text-white text-center">
         Сучасність і традиції у закритому циклі виробництва
       </h4>
       <div className="absolute w-full h-full -bottom-25 flex">
