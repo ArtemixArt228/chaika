@@ -50,16 +50,26 @@ const BUSINESS_INFO = [
 
 export const BusinessSection = () => {
   return (
-    <section className="container mx-auto mb-20">
-      {BUSINESS_ITEMS.map((item, i) => (
-        <BusinessItem {...item} key={i} reverse={i % 2 !== 0} />
-      ))}
+    <section className="mb-20">
+      <div className="relative">
+        <div className="container mx-auto">
+          {BUSINESS_ITEMS.map((item, i) => (
+            <BusinessItem {...item} key={i} reverse={i % 2 !== 0} />
+          ))}
 
-      <MainButton text="Співпрацювати" />
+          <div className="flex justify-center mb-10">
+            <MainButton text="Співпрацювати" />
+          </div>
+        </div>
 
-      {BUSINESS_INFO.map((item, i) => (
-        <BusinessInfo {...item} key={i} />
-      ))}
+        <div className="absolute -bottom-[4.5%] w-full h-[3%] bg-black rounded-b-[50%_100%]" />
+      </div>
+
+      <div className="bg-stone-900 py-20">
+        {BUSINESS_INFO.map((item, i) => (
+          <BusinessInfo {...item} key={i} />
+        ))}
+      </div>
     </section>
   );
 };
