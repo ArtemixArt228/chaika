@@ -1,33 +1,38 @@
 import React from "react";
 import Image from "next/image";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const ProductCard = () => {
+type TProductCardProps = {
+  category: string;
+  quality: string;
+  name: string;
+  image: string;
+};
+
+export const ProductCard = ({
+  category,
+  name,
+  quality,
+  image,
+}: TProductCardProps) => {
   return (
-    <Card className="max-w-99 w-99 h-72 relative p-0 border-0">
-      <CardContent className="relative w-full h-full">
+    <Card className="p-0 border-0 rounded gap-0">
+      <CardContent className="relative aspect-video">
         <Image
           fill
-          className="object-cover w-full h-full rounded-xl"
-          src={""}
+          className="object-cover rounded-t w-full h-full"
+          src={image}
           alt="Activity card"
         />
       </CardContent>
-      <div className="w-full z-10 p-6 -bottom-16">
-        <CardHeader className="bg-night-rider rounded-xl text-center px-6 py-4">
-          <CardTitle className="text-white uppercase">{""}</CardTitle>
-          <CardDescription className="text-stone-400">{}</CardDescription>
-          <Button variant="link" className="uppercase text-main"></Button>
-        </CardHeader>
-      </div>
+      <CardHeader className="bg-night-rider rounded-b p-3">
+        <div className="flex justify-between">
+          <span className="text-main">{category}</span>
+          <span className="text-main">{quality}</span>
+        </div>
+        <CardTitle className="text-white uppercase text-2xl">{name}</CardTitle>
+      </CardHeader>
     </Card>
   );
 };
