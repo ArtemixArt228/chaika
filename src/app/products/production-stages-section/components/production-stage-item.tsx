@@ -18,22 +18,29 @@ export const ProductionStageItem = ({
 }: TProductionStageItemProps) => {
   return (
     <div
-      className={cn("flex gap-6 items-end", {
-        "flex-row-reverse": reverse,
-      })}
+      className={cn(
+        "flex bg-night-rider lg:bg-transparent flex-col rounded-xl lg:rounded-none lg:flex-row gap-10 items-center mb-16 pb-4 lg:pb-0",
+        {
+          "flex-col lg:flex-row-reverse": reverse,
+        },
+      )}
     >
-      <div className="w-1/2 h-130 relative shrink-0">
+      <div className="w-full lg:w-1/2 aspect-video relative shrink-0">
         <Image
           src={productionImage}
           alt="Production stage"
           fill
-          className="object-cover"
+          className="object-cover  rounded-xl"
         />
       </div>
 
-      <div className="flex flex-col gap-4">
-        <h6 className="text-white uppercase text-3xl">{productionHeadline}</h6>
-        <p className="text-stone-400 text-xl">{productionDescription}</p>
+      <div className="flex flex-col gap-4 px-3 lg:px-0">
+        <h6 className="text-white uppercase text-2xl lg:text-3xl">
+          {productionHeadline}
+        </h6>
+        <p className="text-stone-400 text-base lg:text-xl">
+          {productionDescription}
+        </p>
       </div>
     </div>
   );

@@ -12,11 +12,11 @@ import { ProductCard } from "@/app/products/products-section/components/product-
 export const ProductsSection = () => {
   return (
     <section className="container mx-auto mb-20">
-      <h4 className="text-center text-white uppercase text-4xl mb-8">
+      <h4 className="text-2xl md:text-4xl uppercase text-center text-white mb-6">
         Наша продукція
       </h4>
 
-      <div className="flex items-center gap-10 text-white text-2xl text-center mb-16 uppercase">
+      <div className="hidden lg:flex items-center gap-10 text-white text-2xl text-center mb-16 uppercase">
         <span>Усі</span>
         <span>Сирокопчені</span>
         <span>Варені</span>

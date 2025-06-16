@@ -31,7 +31,7 @@ const PRODUCTION_STAGE_ITEMS = [
 
 export const ProductionStagesSection = () => {
   return (
-    <section className="container mx-auto mb-20">
+    <section className="container mx-auto mb-20 px-3 lg:px-0">
       <h4 className="text-center text-white uppercase text-4xl mb-8">
         Етапи виробництва
       </h4>
