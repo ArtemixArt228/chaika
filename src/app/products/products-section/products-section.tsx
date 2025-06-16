@@ -5,7 +5,6 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
 } from "@/components/ui/pagination";
 
 import { ProductCard } from "@/app/products/products-section/components/product-card";
