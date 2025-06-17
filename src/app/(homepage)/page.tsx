@@ -11,15 +11,15 @@ export default function Home() {
     <main className="min-h-dvh">
       <HeroSection />
 
-      <DescriptionSection />
+      {/*<DescriptionSection />*/}
 
-      <ActivitySection />
+      {/*<ActivitySection />*/}
 
-      <BannerSection />
+      {/*<BannerSection />*/}
 
-      <OurProductsSection />
+      {/*<OurProductsSection />*/}
 
-      <ContactRequest />
+      {/*<ContactRequest />*/}
     </main>
   );
 }

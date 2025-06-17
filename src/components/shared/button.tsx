@@ -1,23 +1,18 @@
-import type { ComponentProps } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-
-import { cn } from "@/lib/utils";
-
-interface IMainButtonProps extends ComponentProps<typeof Button> {
+interface IMainButtonProps extends HTMLMotionProps<"button"> {
   text: string;
 }
 
 export const MainButton = ({ text, className, ...props }: IMainButtonProps) => {
   return (
-    <Button
-      className={cn(
-        "bg-main text-white uppercase font-medium text-base py-6 px-3.5",
-        className,
-      )}
+    <motion.button
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      className={`bg-main text-white uppercase font-medium px-6 py-3 sm:px-8 sm:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-out text-sm sm:text-base ${className}`}
       {...props}
     >
       {text}
-    </Button>
+    </motion.button>
   );
 };
