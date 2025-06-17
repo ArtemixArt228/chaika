@@ -168,7 +168,6 @@ export const DescriptionSection = () => {
               z-10
               shadow-lg hover:shadow-2xl
               transition-all duration-300 ease-out
-              cursor-pointer
               overflow-hidden
               group
             "
@@ -205,7 +204,6 @@ export const DescriptionSection = () => {
               left-0 sm:left-2 lg:left-4
               shadow-lg hover:shadow-2xl
               transition-all duration-300 ease-out
-              cursor-pointer
               overflow-hidden
               group
             "

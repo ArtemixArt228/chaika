@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { ActivityCard } from "@/app/(homepage)/activity-section/components/activity-card";
@@ -47,7 +49,7 @@ export const ActivitySection = () => {
         технологіями
       </p>
 
-      <div className="flex flex-wrap gap-x-5 gap-y-20 justify-center">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-20 justify-center">
         {ACTIVITY_CARDS.map((card, i) => (
           <ActivityCard {...card} key={i} />
         ))}

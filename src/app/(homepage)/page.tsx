@@ -13,7 +13,7 @@ export default function Home() {
 
       <DescriptionSection />
 
-      {/*<ActivitySection />*/}
+      <ActivitySection />
 
       {/*<BannerSection />*/}
 
