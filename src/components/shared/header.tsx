@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
-import { useScrolledPastThreshold } from "@/hooks/useScrolledPastThreshold";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
 
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";
@@ -33,14 +33,20 @@ export const Header = () => {
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
-  const scrolled = useScrolledPastThreshold();
+  const scrollProgress = useScrollProgress(500);
+
+  // Interpolate colors
+  const r = Math.round(255 * (1 - scrollProgress)); // white → black
+  const g = Math.round(255 * (1 - scrollProgress)); // white → black
+  const b = Math.round(255 * (1 - scrollProgress)); // white → black
+  const a = 0.6 * scrollProgress + 0.2 * (1 - scrollProgress); // opacity 0.2 → 0.8
 
   return (
     <header
-      className={cn("fixed top-0 left-0 right-0 z-50", {
-        "bg-carbon-fiber/80 backdrop-blur-lg": scrolled,
-        "bg-white/20": !scrolled,
-      })}
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        backgroundColor: `rgba(${r}, ${g}, ${b}, ${a})`,
+      }}
     >
       <div className="container mx-auto py-4 px-2.5 flex items-center justify-between">
         <Link href="/" className="flex items-center z-100">
