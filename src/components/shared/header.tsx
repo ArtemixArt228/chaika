@@ -94,6 +94,7 @@ export const Header = () => {
                   pathname === ROUTES.HOME && "text-main font-semibold",
                 )}
                 prefetch={false}
+                onClick={() => setIsSheetOpen(false)}
               >
                 Головна
               </Link>
@@ -104,6 +105,7 @@ export const Header = () => {
                   pathname === ROUTES.ABOUT && "text-main font-semibold",
                 )}
                 prefetch={false}
+                onClick={() => setIsSheetOpen(false)}
               >
                 Про нас
               </Link>
@@ -115,6 +117,7 @@ export const Header = () => {
                     "text-main font-semibold",
                 )}
                 prefetch={false}
+                onClick={() => setIsSheetOpen(false)}
               >
                 Сфери діяльності
               </Link>
@@ -125,6 +128,7 @@ export const Header = () => {
                   pathname === ROUTES.PRODUCTS && "text-main font-semibold",
                 )}
                 prefetch={false}
+                onClick={() => setIsSheetOpen(false)}
               >
                 Мʼясна продукція
               </Link>
