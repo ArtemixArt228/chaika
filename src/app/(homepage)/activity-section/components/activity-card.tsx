@@ -101,8 +101,8 @@ export const ActivityCard = ({
     >
       <Card
         className="
-        max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-99
-        w-full sm:w-80 md:w-96 lg:w-99
+        max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-98
+        w-full sm:w-80 md:w-96 lg:w-98
         h-60 sm:h-64 md:h-68 lg:h-72 xl:h-80
         relative p-0 border-0
         rounded-lg
