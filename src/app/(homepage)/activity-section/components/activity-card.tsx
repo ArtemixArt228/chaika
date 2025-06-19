@@ -193,6 +193,11 @@ export const ActivityCard = ({
           >
             <Image
               fill
+              sizes="(max-width: 640px) 320px,
+                     (max-width: 768px) 384px,
+                     (max-width: 1024px) 420px,
+                     480px
+              "
               className="
                 object-cover w-full h-full
                 rounded-lg sm:rounded-xl

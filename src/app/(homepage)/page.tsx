@@ -15,7 +15,7 @@ export default function Home() {
 
       <ActivitySection />
 
-      {/*<BannerSection />*/}
+      <BannerSection />
 
       {/*<OurProductsSection />*/}
 
