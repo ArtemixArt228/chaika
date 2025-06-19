@@ -46,7 +46,7 @@ const ACTIVITY_CARDS = [
 export const ActivitySection = () => {
   return (
     <motion.section
-      className="container mx-auto mb-16 sm:mb-20 lg:mb-24 xl:mb-36 px-4 sm:px-6 lg:px-8"
+      className="container mx-auto mb-28 sm:mb-32 lg:mb-36 xl:mb-40 px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

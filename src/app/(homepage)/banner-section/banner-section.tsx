@@ -16,7 +16,7 @@ export const BannerSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative container mx-auto mb-16 sm:mb-20 md:mb-24 lg:mb-40 xl:mb-52 px-4 sm:px-6 lg:px-8"
+      className="relative container mx-auto mb-16 sm:mb-20 md:mb-24 lg:mb-40 xl:mb-52 sm:px-6 lg:px-8"
     >
       <motion.div
         className="relative lg:rounded-xl h-72 sm:h-80 md:h-92 lg:h-96 xl:h-[400px]"
@@ -26,7 +26,7 @@ export const BannerSection = () => {
         transition={{ duration: 0.8, ease: [0.25, 0.25, 0, 1] }}
       >
         {/* Parallax image */}
-        <motion.div className="relative w-full h-full overflow-hidden lg:rounded-xl">
+        <motion.div className="relative w-full h-full overflow-hidden sm:rounded-xl">
           <motion.div style={{ y: parallaxY }} className="absolute inset-0">
             <Image
               src="/homepage/banner-section/banner.png"

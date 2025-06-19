@@ -73,6 +73,7 @@ export const ContactRequest = () => {
           </motion.div>
 
           <Input
+            id="email-desktop"
             type="email"
             placeholder="Ел. пошта"
             value={email}
@@ -107,6 +108,7 @@ export const ContactRequest = () => {
             </motion.div>
 
             <Input
+              id="email-mobile"
               type="email"
               placeholder="Ел. пошта"
               value={email}
