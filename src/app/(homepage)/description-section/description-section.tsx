@@ -6,31 +6,11 @@ import { motion } from "framer-motion";
 
 import { MainButton } from "@/components/shared/button";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const fadeInUpVariants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  containerVariants,
+  fadeInUpVariants,
+  textVariants,
+} from "@/constants/animations";
 
 const imageVariants = {
   hidden: {
@@ -44,21 +24,6 @@ const imageVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
       ease: "easeOut",
     },
   },
