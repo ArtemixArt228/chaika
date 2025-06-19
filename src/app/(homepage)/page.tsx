@@ -17,7 +17,7 @@ export default function Home() {
 
       <BannerSection />
 
-      {/*<OurProductsSection />*/}
+      <OurProductsSection />
 
       {/*<ContactRequest />*/}
     </main>

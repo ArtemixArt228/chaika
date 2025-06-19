@@ -69,7 +69,7 @@ export const HeroSlider = () => {
           nextEl: ".custom-swiper-button-next",
         }}
         autoplay={{ delay: 5000 }}
-        loop={true}
+        loop
         effect="fade"
         fadeEffect={{ crossFade: true }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}

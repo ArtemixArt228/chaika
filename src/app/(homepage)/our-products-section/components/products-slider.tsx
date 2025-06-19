@@ -4,11 +4,14 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
+
+import { MainButton } from "@/components/shared/button";
+
+import { containerVariants } from "@/constants/animations";
+
 import "swiper/css";
 import "swiper/css/navigation";
-
-import { Button } from "@/components/ui/button";
-import { MainButton } from "@/components/shared/button";
 
 const PRODUCTS = [
   "ВИРОБИ Сирокопчені",
@@ -21,29 +24,38 @@ const PRODUCTS = [
 
 export const ProductsSlider = () => {
   return (
-    <div className="relative">
-      <div className="absolute -top-14 right-0 z-10 flex gap-2 p-2">
-        <Button
-          variant="ghost"
-          className="custom-swiper-button-prev bg-transparent p-2"
+    <motion.div
+      className="relative"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="absolute -top-14 right-0 z-10 flex gap-4 p-2">
+        <motion.button
+          whileHover={{ scale: 1.1, x: -4 }}
+          whileTap={{ scale: 0.9 }}
+          className="custom-swiper-button-prev cursor-pointer w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 ease-out border border-white/20 hover:border-white/40"
         >
-          <ChevronLeft className="!size-8 text-white" />
-        </Button>
-        <Button
-          variant="ghost"
-          className="custom-swiper-button-next bg-transparent p-2"
+          <ChevronLeft className="w-6 h-6 text-white" />
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1, x: -4 }}
+          whileTap={{ scale: 0.9 }}
+          className="custom-swiper-button-next cursor-pointer w-10 h-10 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 ease-out border border-white/20 hover:border-white/40"
         >
-          <ChevronRight className="!size-8 text-white" />
-        </Button>
+          <ChevronRight className="w-6 h-6 text-white" />
+        </motion.button>
       </div>
 
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
         navigation={{
-          nextEl: ".custom-swiper-button-next",
           prevEl: ".custom-swiper-button-prev",
+          nextEl: ".custom-swiper-button-next",
         }}
+        loop
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -78,11 +90,11 @@ export const ProductsSlider = () => {
                 height={48}
                 className="z-10 relative"
               />
-              <MainButton text={product} />
+              <MainButton text={product} className="z-10" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 };
