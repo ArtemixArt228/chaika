@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 import { OurValuesCard } from "@/app/about/our-values-section/components/our-values-card";
+import { fadeInUpVariants } from "@/constants/animations";
 
 const OUR_VALUES_CARDS = [
   {
@@ -45,13 +49,25 @@ export const OurValuesSection = () => {
   return (
     <div className="bg-stone-900 pt-60 lg:pt-40 pb-12 mb-32">
       <section className="container mx-auto">
-        <h4 className="text-center text-white uppercase text-2xl md:text-4xl mb-8">
+        <motion.h2
+          variants={fadeInUpVariants}
+          className="
+            text-center text-white uppercase
+            text-xl sm:text-2xl md:text-3xl lg:text-4xl
+            mb-6 sm:mb-8 lg:mb-12
+            px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0
+            rounded-lg md:rounded-none
+            font-medium tracking-wide
+            leading-tight sm:leading-tight
+            max-w-5xl mx-auto
+          "
+        >
           Наші цінності
-        </h4>
+        </motion.h2>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-5 p-3 md:px-0">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-3 md:px-0">
           {OUR_VALUES_CARDS.map((card, i) => (
-            <OurValuesCard key={i} {...card} />
+            <OurValuesCard key={i} {...card} index={i} />
           ))}
         </div>
       </section>
