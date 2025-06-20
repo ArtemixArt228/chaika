@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useMotionValue, animate } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useMotionValue, animate, useInView } from "framer-motion";
 
 export const AnimatedCounter = ({
   from = 0,
@@ -10,22 +10,26 @@ export const AnimatedCounter = ({
   text = "",
   symbol = "",
 }) => {
-  const count = useMotionValue(from);
+  const ref = useRef(null);
+
   const [display, setDisplay] = useState(from);
 
-  useEffect(() => {
-    const controls = animate(count, to, {
-      duration,
-      onUpdate: (latest) => {
-        setDisplay(latest);
-      },
-    });
+  const isInView = useInView(ref, { once: true });
+  const count = useMotionValue(from);
 
-    return controls.stop;
-  }, [to, duration, count]);
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, to, {
+        duration,
+        onUpdate: (latest) => setDisplay(latest),
+      });
+
+      return controls.stop;
+    }
+  }, [isInView, to, duration, count]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
+    <div ref={ref} className="flex flex-col items-center justify-center gap-2">
       <motion.p className="text-6xl text-white text-center">
         {Math.round(display)}
         {symbol}

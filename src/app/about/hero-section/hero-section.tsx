@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const textY = useTransform(scrollY, [0, 500], [0, -30]);
 
   return (
-    <section className="relative mt-0 sm:mt-20 lg:mt-24 xl:mt-30 px-0 sm:px-6 lg:px-0">
+    <section className="relative mt-0 sm:mt-20 lg:mt-24 xl:mt-30 px-0">
       <motion.div
         className="relative w-full h-screen sm:h-[80vh] md:h-screen lg:h-110 lg:w-3xl rounded-lg sm:rounded-xl lg:rounded-none lg:rounded-r-xl shadow-2xl"
         initial={{ opacity: 0, scale: 0.95 }}
@@ -34,7 +34,7 @@ export const HeroSection = () => {
               fill
               className="object-cover rounded-none sm:rounded-xl lg:rounded-none lg:rounded-r-xl transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/40 rounded-lg sm:rounded-xl lg:rounded-none lg:rounded-r-xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/40 rounded-none sm:rounded-xl lg:rounded-none lg:rounded-r-xl" />
           </motion.div>
         </motion.div>
 
@@ -93,7 +93,7 @@ export const HeroSection = () => {
       </motion.div>
 
       <motion.div
-        className="mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8"
+        className="mt-16 sm:mt-20 lg:mt-16 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

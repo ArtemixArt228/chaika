@@ -43,7 +43,7 @@ const OUR_VALUES_CARDS = [
 
 export const OurValuesSection = () => {
   return (
-    <div className="bg-stone-900 pt-70 md:pt-60 lg:pt-40 pb-12 mb-32">
+    <div className="bg-stone-900 pt-60 lg:pt-40 pb-12 mb-32">
       <section className="container mx-auto">
         <h4 className="text-center text-white uppercase text-2xl md:text-4xl mb-8">
           Наші цінності
