@@ -65,7 +65,7 @@ export const OurValuesSection = () => {
           Наші цінності
         </motion.h2>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-3 md:px-0">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 p-3 md:px-0">
           {OUR_VALUES_CARDS.map((card, i) => (
             <OurValuesCard key={i} {...card} index={i} />
           ))}

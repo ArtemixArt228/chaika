@@ -32,7 +32,6 @@ export const SocialSphereSection = () => {
       <motion.h2
         variants={fadeInUpVariants}
         className="
-              bg-main md:bg-transparent
               text-center text-white uppercase
               text-xl sm:text-2xl md:text-3xl lg:text-4xl
               mb-6 sm:mb-8 lg:mb-12
