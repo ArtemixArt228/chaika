@@ -10,9 +10,9 @@ export const Banner = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2, duration: 0.8 }}
     >
-      <h4 className="text-2xl md:text-4xl relative z-10 uppercase text-white text-center">
+      <h3 className="text-2xl md:text-4xl relative z-10 uppercase text-white text-center">
         Сучасність і традиції у закритому циклі виробництва
-      </h4>
+      </h3>
       <div className="absolute w-full h-full -bottom-25 flex">
         {Array.from({ length: 16 }, (_, i) => (
           <div key={i} className="w-30 h-20 relative">

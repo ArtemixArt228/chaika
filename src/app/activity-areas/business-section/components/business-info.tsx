@@ -1,5 +1,10 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { containerVariants, imageVariants } from "@/constants/animations";
 
 type TBusinessInfoProps = {
   businessHeadline: string;
@@ -15,17 +20,43 @@ export const BusinessInfo = ({
   businessSubimage2,
 }: TBusinessInfoProps) => {
   return (
-    <div className="flex flex-col gap-6 px-3 lg:p-0 mb-20 container mx-auto">
-      <h4 className="text-center text-white uppercase text-4xl mb-8">
-        {businessHeadline}
-      </h4>
+    <motion.div
+      variants={containerVariants}
+      className="flex flex-col gap-6 px-3 lg:p-0 mb-20 container mx-auto"
+    >
+      {/* Header */}
+      <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8 text-center">
+        <motion.h4
+          className="
+              text-white uppercase
+              text-xl sm:text-2xl md:text-3xl lg:text-4xl
+              mb-2 sm:mb-4 lg:mb-8
+              rounded-lg md:rounded-none
+              font-medium tracking-wide
+              leading-tight sm:leading-tight
+            "
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+        >
+          {businessHeadline}
+        </motion.h4>
 
-      <p className="text-stone-400 text-xl text-center">
-        {businessDescription}
-      </p>
+        <motion.p
+          className="
+              text-stone-400
+              text-sm sm:text-base lg:text-lg xl:text-xl
+              hover:text-stone-300
+              transition-colors duration-300 ease-out
+              max-w-2xl mx-auto
+            "
+        >
+          {businessDescription}
+        </motion.p>
+      </div>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4">
-        <div className="w-full sm:w-1/2 aspect-[4/3] relative">
+      {/* Images Grid */}
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+        <div className="w-full aspect-[4/3] relative">
           <Image
             src={businessSubimage1}
             alt="Business Image 1"
@@ -34,7 +65,8 @@ export const BusinessInfo = ({
             sizes="(max-width: 640px) 100vw, 50vw"
           />
         </div>
-        <div className="w-full sm:w-1/2 aspect-[4/3] relative">
+
+        <div className="w-full aspect-[4/3] relative">
           <Image
             src={businessSubimage2}
             alt="Business Image 2"
@@ -44,6 +76,6 @@ export const BusinessInfo = ({
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

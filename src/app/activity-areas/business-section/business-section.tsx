@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { MainButton } from "@/components/shared/button";
 
 import { BusinessItem } from "@/app/activity-areas/business-section/components/business-item";
 import { BusinessInfo } from "@/app/activity-areas/business-section/components/business-info";
+import { containerVariants, sectionVariants } from "@/constants/animations";
 
 const BUSINESS_ITEMS = [
   {
@@ -50,26 +55,42 @@ const BUSINESS_INFO = [
 
 export const BusinessSection = () => {
   return (
-    <section className="mb-20">
-      <div className="relative">
-        <div className="container mx-auto">
+    <motion.section
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      className="py-12 sm:py-16 lg:py-24 xl:py-32"
+    >
+      {/* Main Business Items */}
+      <motion.div
+        variants={sectionVariants}
+        className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-10 sm:mb-12 lg:mb-16"
+      >
+        <div className="space-y-16 sm:space-y-20 lg:space-y-28">
           {BUSINESS_ITEMS.map((item, i) => (
-            <BusinessItem {...item} key={i} reverse={i % 2 !== 0} />
+            <BusinessItem key={i} {...item} reverse={i % 2 !== 0} index={i} />
           ))}
-
-          <div className="flex justify-center mb-10">
-            <MainButton text="Співпрацювати" />
-          </div>
         </div>
+      </motion.div>
 
-        <div className="absolute -bottom-[4.5%] w-full h-[3%] bg-black rounded-b-[50%_100%]" />
+      <div className="flex justify-center mb-10">
+        <Link href="#contact_us">
+          <MainButton text="Співпрацювати" />
+        </Link>
       </div>
 
-      <div className="bg-stone-900 py-20">
-        {BUSINESS_INFO.map((item, i) => (
-          <BusinessInfo {...item} key={i} />
-        ))}
-      </div>
-    </section>
+      {/* Business Info Grid */}
+      <motion.div
+        variants={sectionVariants}
+        className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mt-20 sm:mt-24 lg:mt-32"
+      >
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:gap-12 xl:gap-16">
+          {BUSINESS_INFO.map((item, i) => (
+            <BusinessInfo key={i} {...item} />
+          ))}
+        </div>
+      </motion.div>
+    </motion.section>
   );
 };
