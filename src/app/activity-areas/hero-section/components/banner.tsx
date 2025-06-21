@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const Banner = () => {
   return (
-    <div className="bg-night-rider h-36 w-full grid place-items-center relative mt-20 lg:mt-80">
+    <motion.div
+      className="relative z-30 bg-night-rider h-36 w-full grid place-items-center mt-0 lg:mt-40 xl:mt-60"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.2, duration: 0.8 }}
+    >
       <h4 className="text-2xl md:text-4xl relative z-10 uppercase text-white text-center">
         Сучасність і традиції у закритому циклі виробництва
       </h4>
@@ -22,6 +28,6 @@ export const Banner = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
