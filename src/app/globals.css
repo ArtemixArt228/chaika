@@ -108,6 +108,8 @@ body {
 }
 
 @theme {
+  --breakpoint-xs: 26rem;
+
   --color-main: oklch(75.3% 0.16 65.7deg);
   --color-carbon-fiber: oklch(29.7% 0.000000000000000279 0deg);
   --color-night-rider: oklch(31.7% 0.00573 17.5deg);
