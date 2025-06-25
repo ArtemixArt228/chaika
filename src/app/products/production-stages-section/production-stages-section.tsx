@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 import { ProductionStageItem } from "@/app/products/production-stages-section/components/production-stage-item";
+import { fadeInUpVariants } from "@/constants/animations";
 
 const PRODUCTION_STAGE_ITEMS = [
   {
@@ -32,9 +36,21 @@ const PRODUCTION_STAGE_ITEMS = [
 export const ProductionStagesSection = () => {
   return (
     <section className="container mx-auto mb-20 px-3 lg:px-0">
-      <h4 className="text-center text-white uppercase text-4xl mb-8">
+      <motion.h2
+        variants={fadeInUpVariants}
+        className="
+            text-center text-white uppercase
+            text-xl sm:text-2xl md:text-3xl lg:text-4xl
+            mb-6 sm:mb-8 lg:mb-12
+            px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0
+            rounded-lg md:rounded-none
+            font-medium tracking-wide
+            leading-tight sm:leading-tight
+            max-w-5xl mx-auto
+          "
+      >
         Етапи виробництва
-      </h4>
+      </motion.h2>
 
       {PRODUCTION_STAGE_ITEMS.map((item, i) => (
         <ProductionStageItem key={i} {...item} reverse={i % 2 === 0} />
