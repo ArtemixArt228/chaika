@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { containerVariants, imageVariants } from "@/constants/animations";
+import { containerVariants } from "@/constants/animations";
 
 type TBusinessInfoProps = {
   businessHeadline: string;
