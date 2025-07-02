@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/pagination";
 
 import { ProductCard } from "@/app/products/products-section/components/product-card";
+import productsData from "@/app/products/products-section/product-cards.json";
 
 export const ProductsSection = () => {
   return (
@@ -26,25 +27,16 @@ export const ProductsSection = () => {
         <span>Салямі</span>
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-5 px-3 md:px-0 mb-20">
-        <ProductCard
-          category="вітчина"
-          quality="Вищий Ґатунок"
-          name="Ковбаса Домашня"
-          image="/products/products-section/sausage-homemade.png"
-        />
-        <ProductCard
-          category="вітчина"
-          quality="Вищий Ґатунок"
-          name="Ковбаса Домашня"
-          image="/products/products-section/sausage-homemade.png"
-        />
-        <ProductCard
-          category="вітчина"
-          quality="Вищий Ґатунок"
-          name="Ковбаса Домашня"
-          image="/products/products-section/sausage-homemade.png"
-        />
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 px-3 md:px-0 mb-20">
+        {productsData.products.map((product) => (
+          <ProductCard
+            key={product.id}
+            category={product.category}
+            quality={product.quality}
+            name={product.name}
+            image={product.image}
+          />
+        ))}
       </div>
 
       <Pagination>

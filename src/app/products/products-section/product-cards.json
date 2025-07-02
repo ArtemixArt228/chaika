@@ -1,0 +1,410 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса Екстра",
+      "image": "/products/products-section/ekstra.avif"
+    },
+    {
+      "id": 2,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса елітна",
+      "image": "/products/products-section/elitna.avif"
+    },
+    {
+      "id": 3,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаска чезена",
+      "image": "/products/products-section/chezena.avif"
+    },
+    {
+      "id": 4,
+      "category": "вітчина",
+      "quality": "1 Ґатунок",
+      "name": "КОВБАСА ФІЛЕЙНА",
+      "image": "/products/products-section/fileyna.avif"
+    },
+    {
+      "id": 5,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса Графська",
+      "image": "/products/products-section/grafska.avif"
+    },
+    {
+      "id": 6,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "казкова в синюзі",
+      "image": "/products/products-section/kazkova.avif"
+    },
+    {
+      "id": 7,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "ковбаски хмизок",
+      "image": "/products/products-section/khmyzok.avif"
+    },
+    {
+      "id": 8,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "ковбаса лагідна",
+      "image": "/products/products-section/lahidna.avif"
+    },
+    {
+      "id": 9,
+      "category": "варені",
+      "quality": "2 Ґатунок",
+      "name": "сосиски лакомка",
+      "image": "/products/products-section/lakomka.avif"
+    },
+    {
+      "id": 10,
+      "category": "салямі",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса Царська",
+      "image": "/products/products-section/tsarska.avif"
+    },
+    {
+      "id": 11,
+      "category": "сирокопчені",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса апетитна",
+      "image": "/products/products-section/apetytna.avif"
+    },
+    {
+      "id": 12,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "ковбаса баликова",
+      "image": "/products/products-section/balykova.avif"
+    },
+    {
+      "id": 13,
+      "category": "салямі",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса фірменна",
+      "image": "/products/products-section/firmenna.avif"
+    },
+    {
+      "id": 14,
+      "category": "салямі",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаски грильові",
+      "image": "/products/products-section/grylyovi.avif"
+    },
+    {
+      "id": 15,
+      "category": "салямі",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаски єгерські",
+      "image": "/products/products-section/ieherski.avif"
+    },
+    {
+      "id": 16,
+      "category": "копчено-варені",
+      "quality": "1 Ґатунок",
+      "name": "РЕБРА 'ПО-ДОМАШНЬОМУ'",
+      "image": "/products/products-section/kabynosi.avif"
+    },
+    {
+      "id": 17,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "ковбаса лікарська",
+      "image": "/products/products-section/likarska.avif"
+    },
+    {
+      "id": 18,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаски міланські",
+      "image": "/products/products-section/milanski.avif"
+    },
+    {
+      "id": 19,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "ковбаса молочна",
+      "image": "/products/products-section/molochna.avif"
+    },
+    {
+      "id": 20,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "сардельки соковиті",
+      "image": "/products/products-section/sokovyti.avif"
+    },
+    {
+      "id": 21,
+      "category": "варені",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса волинська",
+      "image": "/products/products-section/volynska.avif"
+    },
+    {
+      "id": 22,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса АРОМАТНа",
+      "image": "/products/products-section/aromatnyi.avif"
+    },
+    {
+      "id": 23,
+      "category": "печені",
+      "quality": "Вищий Ґатунок",
+      "name": "Буженина по-домашньому",
+      "image": "/products/products-section/buzhenyna.avif"
+    },
+    {
+      "id": 24,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса Домашня",
+      "image": "/products/products-section/domashnya.avif"
+    },
+    {
+      "id": 25,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "КОВБАСА ДРОГОБИЧ",
+      "image": "/products/products-section/drohobych.avif"
+    },
+    {
+      "id": 26,
+      "category": "вітчина",
+      "quality": "1 Ґатунок",
+      "name": "КОВБАСА ФЕРМЕРСЬКА",
+      "image": "/products/products-section/fermerska.avif"
+    },
+    {
+      "id": 27,
+      "category": "салямі",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса гуцульська",
+      "image": "/products/products-section/hutsulska.avif"
+    },
+    {
+      "id": 28,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса Італійська",
+      "image": "/products/products-section/italyiska.avif"
+    },
+    {
+      "id": 29,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "ковбаса московська",
+      "image": "/products/products-section/moskovska.avif"
+    },
+    {
+      "id": 30,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "мозаїчна в синюзі",
+      "image": "/products/products-section/mozaichna.avif"
+    },
+    {
+      "id": 31,
+      "category": "варені",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса салтовська",
+      "image": "/products/products-section/saltovska.avif"
+    },
+    {
+      "id": 32,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "ковбаска валенсія",
+      "image": "/products/products-section/valensiia.avif"
+    },
+    {
+      "id": 33,
+      "category": "вітчина",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса 'НА ДРОВАХ'",
+      "image": "/products/products-section/na-drovakh.avif"
+    },
+    {
+      "id": 34,
+      "category": "варені",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса оригінальна",
+      "image": "/products/products-section/oryhinalna.avif"
+    },
+    {
+      "id": 35,
+      "category": "печені",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса печінкова",
+      "image": "/products/products-section/pechinkova.avif"
+    },
+    {
+      "id": 36,
+      "category": "салямі",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса сенаторська",
+      "image": "/products/products-section/senatorska.avif"
+    },
+    {
+      "id": 37,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "сардельки студентські",
+      "image": "/products/products-section/studentzki.avif"
+    },
+    {
+      "id": 38,
+      "category": "салямі",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса варшавська",
+      "image": "/products/products-section/varshavska.avif"
+    },
+    {
+      "id": 39,
+      "category": "копчено-варені",
+      "quality": "1 Ґатунок",
+      "name": "Ковбаса Європейська",
+      "image": "/products/products-section/ievropeyska.avif"
+    },
+    {
+      "id": 40,
+      "category": "салямі",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса закарпатська",
+      "image": "/products/products-section/zakarpatska.avif"
+    },
+    {
+      "id": 41,
+      "category": "салямі",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса президентська",
+      "image": "/products/products-section/prezydentska.avif"
+    },
+    {
+      "id": 42,
+      "category": "печені",
+      "quality": "Вищий Ґатунок",
+      "name": "Рулет Асорті",
+      "image": "/products/products-section/rulet-asorti.avif"
+    },
+    {
+      "id": 43,
+      "category": "варені",
+      "quality": "2 Ґатунок",
+      "name": "сардельки слобожанські",
+      "image": "/products/products-section/slobozhanski.avif"
+    },
+    {
+      "id": 44,
+      "category": "салямі",
+      "quality": "2 Ґатунок",
+      "name": "Ковбаса верховинська",
+      "image": "/products/products-section/verkhovynska.avif"
+    },
+    {
+      "id": 45,
+      "category": "копчено-варені",
+      "quality": "2 Ґатунок",
+      "name": "ВУХА СВИННІ",
+      "image": "/products/products-section/vukha-svynni.avif"
+    },
+    {
+      "id": 46,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "сосиска для барбекю",
+      "image": "/products/products-section/dlya-barbekyu.avif"
+    },
+    {
+      "id": 47,
+      "category": "печені",
+      "quality": "Вищий Ґатунок",
+      "name": "рулет з рульок",
+      "image": "/products/products-section/rulet-z-rulok.avif"
+    },
+    {
+      "id": 48,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "КОВБАСА ШИНКО-РУБАНА",
+      "image": "/products/products-section/shynko-rubana.avif"
+    },
+    {
+      "id": 49,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса КАПРИЗ З СИРОМ",
+      "image": "/products/products-section/kapryz-z-syrom.avif"
+    },
+    {
+      "id": 50,
+      "category": "копчено-варені",
+      "quality": "Вищий Ґатунок",
+      "name": "ГРУДИНКА 'ПОПУЛЯРНА'",
+      "image": "/products/products-section/hrud-populyarna.avif"
+    },
+    {
+      "id": 51,
+      "category": "варені",
+      "quality": "1 Ґатунок",
+      "name": "сардельки мозаїка",
+      "image": "/products/products-section/mozaika-z-syrom.avif"
+    },
+    {
+      "id": 52,
+      "category": "копчено-варені",
+      "quality": "Вищий Ґатунок",
+      "name": "Шийка Київська",
+      "image": "/products/products-section/shyiika-kyivska.avif"
+    },
+    {
+      "id": 53,
+      "category": "печені",
+      "quality": "Вищий Ґатунок",
+      "name": "балик ювілейний",
+      "image": "/products/products-section/balyk-yuvileinyi.avif"
+    },
+    {
+      "id": 54,
+      "category": "копчено-варені",
+      "quality": "Вищий Ґатунок",
+      "name": "Шийка Соковита",
+      "image": "/products/products-section/shyiika-srkrvyta.avif"
+    },
+    {
+      "id": 55,
+      "category": "сирокопчені",
+      "quality": "Вищий Ґатунок",
+      "name": "Балик королівський",
+      "image": "/products/products-section/balyk-korolivskyi.avif"
+    },
+    {
+      "id": 56,
+      "category": "печені",
+      "quality": "Вищий Ґатунок",
+      "name": "грудинка Київська",
+      "image": "/products/products-section/hrudinka-podilska.avif"
+    },
+    {
+      "id": 57,
+      "category": "копчено-варені",
+      "quality": "Вищий Ґатунок",
+      "name": "ОКОРОК ЮВІЛЕЙНИЙ",
+      "image": "/products/products-section/okorok-yuvileinyi.avif"
+    },
+    {
+      "id": 58,
+      "category": "вітчина",
+      "quality": "Вищий Ґатунок",
+      "name": "Ковбаса Домашня",
+      "image": "/products/products-section/kovbaska-domashnya.avif"
+    }
+  ]
+}

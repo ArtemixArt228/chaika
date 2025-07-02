@@ -17,7 +17,7 @@ export const ProductCard = ({
   image,
 }: TProductCardProps) => {
   return (
-    <Card className="p-0 border-0 rounded gap-0">
+    <Card className="p-0 border-0 rounded-lg overflow-hidden gap-0">
       <CardContent className="relative aspect-video">
         <Image
           fill
@@ -28,10 +28,12 @@ export const ProductCard = ({
       </CardContent>
       <CardHeader className="bg-night-rider rounded-b p-3">
         <div className="flex justify-between">
-          <span className="text-main">{category}</span>
-          <span className="text-main">{quality}</span>
+          <span className="text-main ">{category}</span>
+          <span className="text-stone-400">{quality}</span>
         </div>
-        <CardTitle className="text-white uppercase text-2xl">{name}</CardTitle>
+        <CardTitle className="text-white uppercase text-2xl my-2">
+          {name}
+        </CardTitle>
       </CardHeader>
     </Card>
   );
