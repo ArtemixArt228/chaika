@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
-import { useScrollProgress } from "@/hooks/useScrollProgress";
+import { useScrollProgress } from "@/hooks/use-scroll-progress";
 
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";

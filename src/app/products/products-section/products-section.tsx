@@ -8,15 +8,26 @@ import {
   PaginationContent,
   PaginationItem,
 } from "@/components/ui/pagination";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 import { ProductCard } from "@/app/products/products-section/components/product-card";
 import productsData from "@/app/products/products-section/product-cards.json";
 
 export const ProductsSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("Усі");
+  const [selectedCategory, setSelectedCategory] = useState("усі");
 
-  const itemsPerPage = 9;
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 640px)");
+
+  const itemsPerPage = isSmallDevice ? 3 : 9;
 
   const categories = [
     "усі",
@@ -83,7 +94,7 @@ export const ProductsSection = () => {
   };
 
   return (
-    <section className="container mx-auto mb-20">
+    <section className="container mx-auto mb-16 sm:mb-20 lg:mb-24 xl:mb-36 px-4 sm:px-6 lg:px-8">
       <h4 className="text-2xl md:text-4xl uppercase text-center text-white mb-16">
         Наша продукція
       </h4>
@@ -107,21 +118,29 @@ export const ProductsSection = () => {
 
       {/* Mobile Category Filter */}
       <div className="lg:hidden mb-8">
-        <select
+        <Select
           value={selectedCategory}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className="w-full p-3 bg-gray-800 text-white rounded-lg border border-gray-600"
+          onValueChange={(value) => handleCategoryChange(value)}
         >
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger className="w-full py-4 px-5 bg-zinc-900 text-white text-xl uppercase border border-zinc-700 rounded-xl focus:ring-0 focus:outline-none hover:border-main transition">
+            <SelectValue placeholder="Усі" />
+          </SelectTrigger>
+          <SelectContent className="bg-zinc-900 border border-zinc-700 text-white text-xl uppercase rounded-xl shadow-xl">
+            {categories.map((category) => (
+              <SelectItem
+                key={`mobile-${category}`}
+                value={category}
+                className="uppercase hover:text-orange-300 focus:bg-main focus:text-white"
+              >
+                {category}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5 px-3 md:px-0 mb-20 min-h-[400px]">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-5 mb-20 min-h-[400px]">
         {currentProducts.length > 0 ? (
           currentProducts.map((product) => (
             <ProductCard
