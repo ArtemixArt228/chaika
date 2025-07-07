@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 // Mock Separator component
 const Separator = ({ orientation = "vertical", className = "" }) => (
@@ -43,7 +43,7 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOut,
       staggerChildren: 0.15,
     },
   },
@@ -61,7 +61,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };

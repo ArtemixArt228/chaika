@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
 
 import {
@@ -24,7 +24,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -39,7 +39,7 @@ const contentVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: easeOut,
       delay: 0.2,
     },
   },
@@ -51,7 +51,7 @@ const imageVariants = {
     scale: 1.05,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -62,7 +62,7 @@ const overlayVariants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -74,7 +74,7 @@ const cardHeaderVariants = {
     scale: 1.02,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };

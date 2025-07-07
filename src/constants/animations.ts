@@ -1,3 +1,7 @@
+import { easeOut, cubicBezier } from "framer-motion";
+
+const customEase = cubicBezier(0.25, 0.46, 0.45, 0.94);
+
 export const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -19,7 +23,7 @@ export const fadeInUpVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -34,7 +38,7 @@ export const textVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -46,7 +50,7 @@ export const imageVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: customEase,
     },
   },
 };
@@ -59,7 +63,7 @@ export const subImageVariants = {
     transition: {
       duration: 0.5,
       delay: 0.4 + i * 0.1,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: customEase,
     },
   }),
 };
@@ -71,7 +75,7 @@ export const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: customEase,
     },
   },
 };
@@ -83,7 +87,7 @@ export const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: customEase,
     },
   },
 };

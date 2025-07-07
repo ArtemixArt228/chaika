@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 import { MainButton } from "@/components/shared/button";
 
@@ -24,7 +24,7 @@ const imageVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
