@@ -1,106 +1,40 @@
-"use client";
-
-import React, { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useMemo } from "react";
 
 import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-} from "@/components/ui/pagination";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
-import { useMediaQuery } from "@/hooks/use-media-query";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import { ProductCard } from "@/app/products/products-section/components/product-card";
 import productsData from "@/app/products/products-section/product-cards.json";
 
 export const ProductsSection = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("усі");
+  const categories = useMemo(
+    () => [
+      "сирокопчені",
+      "варені",
+      "вітчина",
+      "копчено-варені",
+      "печені",
+      "салямі",
+    ],
+    [],
+  );
 
-  const isSmallDevice = useMediaQuery("only screen and (max-width : 640px)");
+  // Group products by category
+  const productsByCategory = useMemo(() => {
+    const grouped: Record<string, typeof productsData.products> = {};
 
-  const itemsPerPage = isSmallDevice ? 3 : 9;
+    categories.forEach((category) => {
+      grouped[category] = productsData.products.filter(
+        (product) => product.category === category,
+      );
+    });
 
-  const categories = [
-    "усі",
-    "сирокопчені",
-    "варені",
-    "вітчина",
-    "копчено-варені",
-    "печені",
-    "салямі",
-  ];
-
-  // Filter products based on a selected category
-  const filteredProducts = useMemo(() => {
-    if (selectedCategory === "усі") {
-      return productsData.products;
-    }
-
-    return productsData.products.filter(
-      (product) => product.category === selectedCategory,
-    );
-  }, [selectedCategory]);
-
-  // Calculate pagination
-  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentProducts = filteredProducts.slice(startIndex, endIndex);
-
-  // Reset to first page when category changes
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const handlePageChange = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
-
-  // Generate page numbers to display
-  const getPageNumbers = () => {
-    const pages: number[] = [];
-    const maxVisiblePages = 3;
-
-    if (totalPages <= maxVisiblePages) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-      return pages;
-    }
-
-    let start = currentPage - Math.floor(maxVisiblePages / 2);
-    let end = currentPage + Math.floor(maxVisiblePages / 2);
-
-    // Коригуємо, якщо ми біля початку
-    if (start < 1) {
-      start = 1;
-      end = maxVisiblePages;
-    }
-
-    // Коригуємо, якщо ми біля кінця
-    if (end > totalPages) {
-      end = totalPages;
-      start = totalPages - maxVisiblePages + 1;
-    }
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    return pages;
-  };
+    return grouped;
+  }, [categories]);
 
   return (
     <section className="container mx-auto mb-16 sm:mb-20 lg:mb-24 xl:mb-36 px-4 sm:px-6 lg:px-8">
@@ -108,98 +42,59 @@ export const ProductsSection = () => {
         Наша продукція
       </h4>
 
-      {/* Category Filter */}
-      <div className="hidden lg:flex items-center gap-10 text-white text-2xl mb-10 uppercase flex-wrap">
-        {categories.map((category) => (
-          <span
-            key={category}
-            className={`cursor-pointer transition-colors duration-200 ${
-              selectedCategory === category
-                ? "text-main border-b-2 border-main"
-                : "hover:text-orange-300"
-            }`}
-            onClick={() => handleCategoryChange(category)}
-          >
-            {category}
-          </span>
-        ))}
-      </div>
+      {/* Accordion Categories */}
+      <Accordion type="multiple" className="space-y-6">
+        {categories.map((category) => {
+          const categoryProducts = productsByCategory[category];
 
-      {/* Mobile Category Filter */}
-      <div className="lg:hidden mb-8">
-        <Select
-          value={selectedCategory}
-          onValueChange={(value) => handleCategoryChange(value)}
-        >
-          <SelectTrigger className="w-full py-4 px-5 bg-zinc-900 text-white text-xl uppercase border border-zinc-700 rounded-xl focus:ring-0 focus:outline-none hover:border-main transition">
-            <SelectValue placeholder="Усі" />
-          </SelectTrigger>
-          <SelectContent className="bg-zinc-900 border border-zinc-700 text-white text-xl uppercase rounded-xl shadow-xl">
-            {categories.map((category) => (
-              <SelectItem
-                key={`mobile-${category}`}
-                value={category}
-                className="uppercase hover:text-orange-300 focus:bg-main focus:text-white"
-              >
-                {category}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+          if (!categoryProducts || categoryProducts.length === 0) {
+            return null;
+          }
 
-      {/* Products Grid */}
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-5 mb-20 min-h-[64rem] 2xl:min-h-[72rem]">
-        {currentProducts.length > 0 ? (
-          currentProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              category={product.category}
-              quality={product.quality}
-              name={product.name}
-              image={product.image}
-            />
-          ))
-        ) : (
-          <div className="col-span-full text-center text-white text-xl py-20">
-            Товари не знайдено
-          </div>
-        )}
-      </div>
-
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <Pagination>
-          <PaginationContent className="flex items-center justify-center gap-4 text-2xl">
-            <PaginationItem
-              className="cursor-pointer"
-              onClick={() => handlePageChange(currentPage - 1)}
+          return (
+            <AccordionItem
+              key={category}
+              value={category}
+              className="border cursor-pointer border-zinc-700 rounded-xl overflow-hidden bg-zinc-900"
             >
-              <ChevronLeft className="size-8 text-white hover:text-orange-300" />
-            </PaginationItem>
+              <AccordionTrigger className="w-full px-6 py-4 cursor-pointer text-white text-2xl uppercase flex items-center justify-between hover:bg-zinc-800 transition-colors duration-200 hover:no-underline [&[data-state=open]>svg]:text-main">
+                <span className="flex items-center gap-3">
+                  {category}
+                  <span className="text-lg bg-main text-white px-3 py-1 rounded-full">
+                    {categoryProducts.length}
+                  </span>
+                </span>
+              </AccordionTrigger>
 
-            {getPageNumbers().map((pageNum) => (
-              <PaginationItem
-                key={pageNum}
-                className={`cursor-pointer size-9 grid place-items-center rounded ${
-                  currentPage === pageNum
-                    ? "bg-main text-white"
-                    : "text-white hover:bg-orange-300"
-                }`}
-                onClick={() => handlePageChange(pageNum)}
-              >
-                {pageNum}
-              </PaginationItem>
-            ))}
+              <AccordionContent className="px-0 pb-0">
+                <div className="p-6 bg-zinc-950/50">
+                  <div className="grid grid-cols-[repeat(auto-fill,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-5">
+                    {categoryProducts.map((product) => (
+                      <ProductCard
+                        key={product.id}
+                        category={product.category}
+                        quality={product.quality}
+                        name={product.name}
+                        image={product.image}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
 
-            <PaginationItem
-              className="cursor-pointer"
-              onClick={() => handlePageChange(currentPage + 1)}
-            >
-              <ChevronRight className="size-8 text-white hover:text-orange-300" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+      {/* Empty State */}
+      {categories.every(
+        (category) =>
+          !productsByCategory[category] ||
+          productsByCategory[category].length === 0,
+      ) && (
+        <div className="text-center text-white text-xl py-20">
+          Товари не знайдено
+        </div>
       )}
     </section>
   );
