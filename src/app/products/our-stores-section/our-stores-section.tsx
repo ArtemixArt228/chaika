@@ -67,7 +67,7 @@ export const OurStoresSection = () => {
           max-w-5xl mx-auto
           "
       >
-        Наша команда
+        Наші магазини
       </motion.h2>
 
       <div className="w-full relative">
@@ -101,6 +101,7 @@ export const OurStoresSection = () => {
               <div className="flex flex-col md:flex-row items-center justify-center">
                 <div className="relative w-full aspect-square md:w-150 md:h-142 md:left-10">
                   <Image
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 37.5rem"
                     src={slide.image}
                     alt="team member"
                     fill

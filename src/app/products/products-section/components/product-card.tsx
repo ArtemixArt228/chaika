@@ -20,6 +20,7 @@ export const ProductCard = ({
     <Card className="p-0 border-0 rounded-lg overflow-hidden gap-0">
       <CardContent className="relative aspect-video">
         <Image
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           fill
           className="object-cover rounded-t w-full h-full"
           src={image}

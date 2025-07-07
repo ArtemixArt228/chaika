@@ -32,6 +32,7 @@ export const HeroSection = () => {
             className="relative w-full h-full"
           >
             <Image
+              sizes="(max-width: 1024px) 100vw, 50vw"
               src="/products/hero-section/banner.png"
               alt="Products"
               fill

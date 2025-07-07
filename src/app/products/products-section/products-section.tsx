@@ -70,24 +70,33 @@ export const ProductsSection = () => {
 
   // Generate page numbers to display
   const getPageNumbers = () => {
-    const pages = [];
+    const pages: number[] = [];
     const maxVisiblePages = 3;
 
     if (totalPages <= maxVisiblePages) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
       }
-    } else {
-      let start = Math.max(1, currentPage - 2);
-      const end = Math.min(totalPages, start + maxVisiblePages - 1);
+      return pages;
+    }
 
-      if (end - start < maxVisiblePages - 1) {
-        start = Math.max(1, end - maxVisiblePages + 1);
-      }
+    let start = currentPage - Math.floor(maxVisiblePages / 2);
+    let end = currentPage + Math.floor(maxVisiblePages / 2);
 
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
+    // Коригуємо, якщо ми біля початку
+    if (start < 1) {
+      start = 1;
+      end = maxVisiblePages;
+    }
+
+    // Коригуємо, якщо ми біля кінця
+    if (end > totalPages) {
+      end = totalPages;
+      start = totalPages - maxVisiblePages + 1;
+    }
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
     }
 
     return pages;
@@ -140,7 +149,7 @@ export const ProductsSection = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-5 mb-20 min-h-[400px]">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-5 mb-20 min-h-[64rem] 2xl:min-h-[72rem]">
         {currentProducts.length > 0 ? (
           currentProducts.map((product) => (
             <ProductCard
