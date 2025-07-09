@@ -8,25 +8,25 @@ import { fadeInUpVariants } from "@/constants/animations";
 
 const PRODUCTION_STAGE_ITEMS = [
   {
-    productionImage: "/products/production-stages-section/image-1.png",
+    productionImage: "/products/production-stages-section/image-1.avif",
     productionHeadline: "Вирощування та виробництво комбікорму",
     productionDescription:
       "На власних полях ми вирощуємо екологічно чисті зернові та трав'яні культури, які стають основою для якісних комбікормів. Контроль якості починається ще на цьому етапі, забезпечуючи розробку здорового харчування для тварин у лабораторії.",
   },
   {
-    productionImage: "/products/production-stages-section/image-2.png",
+    productionImage: "/products/production-stages-section/image-2.avif",
     productionHeadline: "Тваринництво",
     productionDescription:
       "На сучасних фермах ми дбаємо про добробут тварин, застосовуючи інноваційні технології та підтримуючи високі стандарти утримання. Це гарантує отримання якісної сировини для подальшого виробництва.",
   },
   {
-    productionImage: "/products/production-stages-section/image-3.png",
+    productionImage: "/products/production-stages-section/image-3.avif",
     productionHeadline: "Переробка м’ясної сировини",
     productionDescription:
       "На м’ясопереробних цехах компанії використовуються сучасні технології обробки, що дозволяють зберегти натуральний смак і корисні властивості продукції. Усі процеси відповідають суворим санітарним нормам і стандартам якості.",
   },
   {
-    productionImage: "/products/production-stages-section/image-4.png",
+    productionImage: "/products/production-stages-section/image-4.avif",
     productionHeadline: "Пакування продукції та доставка",
     productionDescription:
       "М’ясна продукція проходить ретельне вакуумне або герметичне пакування, що зберігає свіжість і якість на тривалий час.Продукція доставляється у роздрібні точки за оптимальних умов транспортування, що гарантує її свіжість і відповідність найвищим стандартам якості.",

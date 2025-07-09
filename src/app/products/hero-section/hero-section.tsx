@@ -33,7 +33,7 @@ export const HeroSection = () => {
           >
             <Image
               sizes="(max-width: 1024px) 100vw, 50vw"
-              src="/products/hero-section/banner.png"
+              src="/products/hero-section/banner.avif"
               alt="Products"
               fill
               className="object-cover transition-all duration-300 group-hover:brightness-105"
