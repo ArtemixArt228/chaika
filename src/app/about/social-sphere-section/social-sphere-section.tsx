@@ -66,7 +66,7 @@ export const SocialSphereSection = () => {
       >
         <motion.div style={{ scale: imageScale }} className="w-full h-full">
           <Image
-            src="/about/social-sphere-section/banner.png"
+            src="/about/social-sphere-section/banner.avif"
             alt="Соціальна сфера - підтримка місцевих громад та розвиток традицій"
             fill
             className="object-cover"

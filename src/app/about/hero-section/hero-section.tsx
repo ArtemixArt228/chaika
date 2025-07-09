@@ -29,7 +29,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="/about/hero-section/field.png"
+              src="/about/hero-section/field.avif"
               alt="Field"
               fill
               className="object-cover rounded-none sm:rounded-xl lg:rounded-none lg:rounded-r-xl transition-transform duration-700"

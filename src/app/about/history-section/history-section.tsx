@@ -88,9 +88,9 @@ export const HistorySection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           {[
-            "/about/history-section/images/image-1.png",
-            "/about/history-section/images/image-2.png",
-            "/about/history-section/images/image-3.png",
+            "/about/history-section/images/image-1.avif",
+            "/about/history-section/images/image-2.avif",
+            "/about/history-section/images/image-3.avif",
           ].map((src, index) => (
             <motion.div
               key={index}
