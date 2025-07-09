@@ -125,7 +125,7 @@ export const HeroSection = () => {
             transition={{ duration: 2, ease: "easeOut" }}
           >
             <Image
-              src="/activity-areas/hero-section/field.png"
+              src="/activity-areas/hero-section/field.avif"
               alt="Поля та сільськогосподарські угіддя компанії"
               fill
               className="object-cover lg:rounded-l-xl"
