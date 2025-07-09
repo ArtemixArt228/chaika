@@ -29,7 +29,7 @@ export const BannerSection = () => {
         <motion.div className="relative w-full h-full overflow-hidden sm:rounded-xl">
           <motion.div style={{ y: parallaxY }} className="absolute inset-0">
             <Image
-              src="/homepage/banner-section/banner.png"
+              src="/homepage/banner-section/banner.avif"
               alt="Banner"
               fill
               sizes="(max-width: 1024px) 100vw, 1200px"

@@ -138,7 +138,7 @@ export const DescriptionSection = () => {
             "
           >
             <Image
-              src="/homepage/description-section/seed.png"
+              src="/homepage/description-section/seed.avif"
               alt="Seed"
               fill
               sizes="(max-width: 640px) 176px,
@@ -174,7 +174,7 @@ export const DescriptionSection = () => {
             "
           >
             <Image
-              src="/homepage/description-section/field.png"
+              src="/homepage/description-section/field.avif"
               alt="Field"
               fill
               sizes="(max-width: 640px) 176px,

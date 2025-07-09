@@ -15,31 +15,31 @@ const ACTIVITY_CARDS = [
     cardTitle: "Агробізнес",
     cardDescription:
       "Вирощуємо високоякісні культури, використовуючи сучасні екологічні підходи",
-    cardImage: "/homepage/activity-section/cards/card-1.png",
+    cardImage: "/homepage/activity-section/cards/card-1.avif",
   },
   {
     cardTitle: "Тваринництво",
     cardDescription:
       "Піклуємося про тварин і забезпечуємо натуральність кожного продукту",
-    cardImage: "/homepage/activity-section/cards/card-2.png",
+    cardImage: "/homepage/activity-section/cards/card-2.avif",
   },
   {
     cardTitle: "Садівництво",
     cardDescription:
       "Створюємо ідеальні умови для вирощування екологічно чистих фруктів і ягід",
-    cardImage: "/homepage/activity-section/cards/card-3.png",
+    cardImage: "/homepage/activity-section/cards/card-3.avif",
   },
   {
     cardTitle: "Мʼясопереробка",
     cardDescription:
       "Власне виробництво м’ясної продукції за найвищими стандартами якості",
-    cardImage: "/homepage/activity-section/cards/card-4.png",
+    cardImage: "/homepage/activity-section/cards/card-4.avif",
   },
   {
     cardTitle: "Комбікорм",
     cardDescription:
       "Натуральні інгредієнти, збалансований склад і найкращий результат",
-    cardImage: "/homepage/activity-section/cards/card-5.png",
+    cardImage: "/homepage/activity-section/cards/card-5.avif",
   },
 ];
 
