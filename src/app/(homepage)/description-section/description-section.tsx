@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion, easeOut } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 import { MainButton } from "@/components/shared/button";
 
@@ -12,186 +12,107 @@ import {
   textVariants,
 } from "@/constants/animations";
 
-const imageVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.9,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: easeOut,
-    },
-  },
-};
-
-export const DescriptionSection = () => {
-  return (
-    <motion.section
+export const DescriptionSection = () => (
+  <LazyMotion features={domAnimation}>
+    <m.section
       className="container mx-auto mb-16 sm:mb-20 lg:mb-24 xl:mb-36 px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.h2
+      <m.h2
         variants={fadeInUpVariants}
-        className="
-          bg-main md:bg-transparent
-          text-center text-white uppercase
-          text-xl sm:text-2xl md:text-3xl lg:text-4xl
-          mb-6 sm:mb-8 lg:mb-12
-          px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0
-          rounded-lg md:rounded-none
-          font-medium tracking-wide
-          leading-tight sm:leading-tight
-          max-w-5xl mx-auto
-        "
+        className="bg-main md:bg-transparent text-center text-white uppercase
+          text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 sm:mb-8 lg:mb-12
+          px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0 rounded-lg md:rounded-none
+          font-medium tracking-wide leading-tight max-w-5xl mx-auto"
       >
         Від родючих полів до смачних страв – ми створюємо якість природним
         шляхом
-      </motion.h2>
+      </m.h2>
 
-      <div className="flex gap-6 sm:gap-8 lg:gap-12 xl:gap-16 flex-col-reverse lg:flex-row items-start">
-        <motion.div
-          className="grid gap-4 sm:gap-6 lg:gap-8 lg:flex-1 w-full"
+      <div className="flex flex-col-reverse lg:flex-row gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-start">
+        <m.div
+          className="grid gap-4 sm:gap-6 lg:gap-8 lg:flex-1"
           variants={containerVariants}
         >
-          <motion.h3
+          <m.h3
             variants={textVariants}
-            className="
-              text-white uppercase
-              lg:text-2xl xl:text-3xl
-              font-medium tracking-wide
-              hover:text-gray-100
-              transition-colors duration-300 ease-out
-            "
+            className="text-white uppercase lg:text-2xl xl:text-3xl
+              font-medium tracking-wide hover:text-gray-100 transition-colors duration-300 ease-out"
           >
             «Чайка» - натуральність та довіра в кожному аспекті
-          </motion.h3>
+          </m.h3>
 
-          <motion.p
+          <m.p
             variants={textVariants}
-            className="
-              text-stone-400
-              text-sm sm:text-base lg:text-lg xl:text-xl
-              hover:text-stone-300
-              transition-colors duration-300 ease-out
-            "
+            className="text-stone-400 text-sm sm:text-base lg:text-lg xl:text-xl
+              hover:text-stone-300 transition-colors duration-300 ease-out"
           >
             Компанія «Чайка» веде успішну діяльність на землях площею понад 3500
             гектарів, де ми займаємося вирощуванням сільськогосподарських
             культур, тваринництвом, садівництвом і м&#39;ясопереробкою.
-          </motion.p>
+          </m.p>
 
-          <motion.p
+          <m.p
             variants={textVariants}
-            className="
-              text-stone-400
-              text-sm sm:text-base lg:text-lg xl:text-xl
-              hover:text-stone-300
-              transition-colors duration-300 ease-out
-            "
+            className="text-stone-400 text-sm sm:text-base lg:text-lg xl:text-xl
+              hover:text-stone-300 transition-colors duration-300 ease-out"
           >
             Ми не лише вирощуємо та переробляємо сільськогосподарську продукцію,
             а й розвиваємо сучасні технології для досягнення високих результатів
             у всіх сферах. Наш підхід до бізнесу — це гармонійне поєднання
             традицій та новітніх технологій.
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={textVariants} className="mt-2 sm:mt-4">
+          <m.div variants={textVariants} className="mt-4">
             <MainButton text="Більше" className="px-18 md:px-20" />
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
-        <motion.div
-          className="
-            relative
-            h-64 sm:h-72 md:h-80 lg:h-[22rem] xl:h-[26rem]
-            w-full lg:flex-1
-            mb-8 lg:mb-0
-          "
-          variants={containerVariants}
-        >
-          <motion.div
-            variants={imageVariants}
-            whileHover={{
-              scale: 1.05,
-              zIndex: 20,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-            className="
-              absolute
-              w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 xl:w-96 xl:h-72
-              rounded-lg sm:rounded-xl
-              bottom-6 sm:bottom-8 lg:bottom-12
-              right-0 sm:right-2 lg:right-4
-              z-10
-              shadow-lg hover:shadow-2xl
-              transition-all duration-300 ease-out
-              overflow-hidden
-              group
-            "
-          >
-            <Image
-              src="/homepage/description-section/seed.avif"
-              alt="Seed"
-              fill
-              sizes="(max-width: 640px) 176px,
-                 (max-width: 768px) 224px,
-                 (max-width: 1024px) 256px,
-                 (max-width: 1280px) 320px,
-                 384px"
-              className="
-                object-cover rounded-lg sm:rounded-xl
-                group-hover:scale-110
-                transition-transform duration-500 ease-out
-              "
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-          </motion.div>
+        <div className="relative w-full lg:flex-1 h-64 sm:h-72 md:h-80 lg:h-[22rem] xl:h-[26rem] mb-8 lg:mb-0">
+          {["seed.avif", "field.avif"].map((img, idx) => {
+            const pos =
+              idx === 0
+                ? { right: ["0", "2", "4"], bottom: ["6", "8", "12"] }
+                : { left: ["0", "2", "4"], bottom: ["0", "2", "4"] };
 
-          <motion.div
-            variants={imageVariants}
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-            className="
-              absolute
-              w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 xl:w-96 xl:h-72
-              rounded-lg sm:rounded-xl
-              bottom-0 sm:bottom-2 lg:bottom-4
-              left-0 sm:left-2 lg:left-4
-              shadow-lg hover:shadow-2xl
-              transition-all duration-300 ease-out
-              overflow-hidden
-              group
-            "
-          >
-            <Image
-              src="/homepage/description-section/field.avif"
-              alt="Field"
-              fill
-              sizes="(max-width: 640px) 176px,
-                 (max-width: 768px) 224px,
-                 (max-width: 1024px) 256px,
-                 (max-width: 1280px) 320px,
-                 384px"
-              className="
-                object-cover rounded-lg sm:rounded-xl
-                group-hover:scale-110
-                transition-transform duration-500 ease-out
-              "
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-          </motion.div>
-        </motion.div>
+            return (
+              <div
+                key={img}
+                className={`
+                  absolute
+                  w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 xl:w-96 xl:h-72
+                  rounded-lg sm:rounded-xl shadow-lg overflow-hidden group
+                  transition-shadow duration-300 ease-out hover:shadow-2xl
+                  will-change-transform
+                  bottom-${pos.bottom[0]} sm:bottom-${pos.bottom[1]} lg:bottom-${pos.bottom[2]}
+                  ${
+                    pos.right
+                      ? `right-${pos.right[0]} sm:right-${pos.right[1]} lg:right-${pos.right[2]}`
+                      : `left-${pos.left[0]} sm:left-${pos.left[1]} lg:left-${pos.left[2]}`
+                  }
+                `}
+              >
+                <Image
+                  src={`/homepage/description-section/${img}`}
+                  alt={img.split(".")[0]}
+                  fill
+                  sizes="(max-width: 640px) 176px, (max-width: 768px) 224px, (max-width: 1024px) 256px, (max-width: 1280px) 320px, 384px"
+                  className="object-cover rounded-lg sm:rounded-xl
+                    group-hover:scale-105 transition-transform duration-300 ease-in-out
+                    will-change-transform backface-hidden"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </motion.section>
-  );
-};
+    </m.section>
+  </LazyMotion>
+);

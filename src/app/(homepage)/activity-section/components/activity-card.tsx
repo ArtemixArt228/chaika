@@ -13,46 +13,16 @@ import {
 import { Button } from "@/components/ui/button";
 
 const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-    scale: 0.95,
-  },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: easeOut,
-    },
+    transition: { duration: 0.6, ease: easeOut },
   },
-};
-
-const contentVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: easeOut,
-      delay: 0.2,
-    },
-  },
-};
-
-const imageVariants = {
-  rest: { scale: 1 },
   hover: {
-    scale: 1.05,
-    transition: {
-      duration: 0.4,
-      ease: easeOut,
-    },
+    scale: 1.01,
+    transition: { duration: 0.2, ease: easeOut },
   },
 };
 
@@ -60,22 +30,7 @@ const overlayVariants = {
   rest: { opacity: 0 },
   hover: {
     opacity: 1,
-    transition: {
-      duration: 0.3,
-      ease: easeOut,
-    },
-  },
-};
-
-const cardHeaderVariants = {
-  rest: { y: 0, scale: 1 },
-  hover: {
-    y: -4,
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: easeOut,
-    },
+    transition: { duration: 0.3, ease: easeOut },
   },
 };
 
@@ -111,7 +66,6 @@ export const ActivityCard = ({
       "
       >
         <motion.div
-          variants={contentVariants}
           className="
             absolute w-full z-20
             px-3 sm:px-4 md:px-5 lg:px-6
@@ -120,7 +74,7 @@ export const ActivityCard = ({
             transition-all duration-300 ease-out
           "
         >
-          <motion.div variants={cardHeaderVariants}>
+          <motion.div>
             <CardHeader
               className="
               bg-night-rider rounded-lg sm:rounded-xl
@@ -188,7 +142,13 @@ export const ActivityCard = ({
 
         <CardContent className="relative w-full h-full p-0 overflow-hidden rounded-lg">
           <motion.div
-            variants={imageVariants}
+            variants={{
+              rest: { scale: 1 },
+              hover: {
+                scale: 1.05,
+                transition: { duration: 0.4, ease: easeOut },
+              },
+            }}
             className="w-full h-full relative"
           >
             <Image

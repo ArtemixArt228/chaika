@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 import { ActivityCard } from "@/app/(homepage)/activity-section/components/activity-card";
 import {
@@ -43,51 +43,39 @@ const ACTIVITY_CARDS = [
   },
 ];
 
-export const ActivitySection = () => {
-  return (
-    <motion.section
+export const ActivitySection = () => (
+  <LazyMotion features={domAnimation}>
+    <m.section
       className="container mx-auto mb-28 sm:mb-32 lg:mb-36 xl:mb-40 px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.h2
+      <m.h2
         variants={fadeInUpVariants}
-        className="
-          text-center text-white uppercase
-          text-xl sm:text-2xl md:text-3xl lg:text-4xl
-          mb-6 sm:mb-8 lg:mb-12
-          px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0
-          rounded-lg md:rounded-none
-          font-medium tracking-wide
-          leading-tight sm:leading-tight
-          max-w-5xl mx-auto
-        "
+        className="text-center text-white uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl
+          mb-6 sm:mb-8 lg:mb-12 px-4 py-3 sm:px-6 sm:py-4 md:px-0 md:py-0
+          rounded-lg md:rounded-none font-medium tracking-wide leading-tight max-w-5xl mx-auto"
       >
         Сфери діяльності
-      </motion.h2>
-      <motion.p
+      </m.h2>
+
+      <m.p
         variants={textVariants}
-        className="
-              text-stone-400
-              text-center
-              text-sm sm:text-base lg:text-lg xl:text-xl
-              hover:text-stone-300
-              max-w-3xl mx-auto mb-16
-              transition-colors duration-300 ease-out
-            "
+        className="text-stone-400 text-center text-sm sm:text-base lg:text-lg xl:text-xl
+          max-w-3xl mx-auto mb-16 transition-colors duration-300 ease-out hover:text-stone-300"
       >
         Від вирощування до готової продукції. Ми працюємо на перетині традицій
-        та інновацій, об&#39;єднуючи найкращі природні ресурси з сучасними
-        технологіями
-      </motion.p>
+        та інновацій, обʼєднуючи найкращі природні ресурси з сучасними
+        технологіями.
+      </m.p>
 
       <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-20 justify-center">
-        {ACTIVITY_CARDS.map((card, i) => (
-          <ActivityCard {...card} key={i} />
+        {ACTIVITY_CARDS.map((card) => (
+          <ActivityCard {...card} key={card.cardTitle} />
         ))}
       </div>
-    </motion.section>
-  );
-};
+    </m.section>
+  </LazyMotion>
+);
